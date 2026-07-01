@@ -1,5 +1,12 @@
+CREATE DATABASE aqi_report;
+USE aqi_report;
+
+CREATE SCHEMA bronze;
+CREATE SCHEMA silver;
+CREATE SCHEMA gold;
+
 IF OBJECTID('bronze.stations','U') IS NOT NULL
-  DROP TABLE bronze.stations
+  DROP TABLE bronze.stations;
 
 CREATE TABLE bronze.stations(
 id INT,
