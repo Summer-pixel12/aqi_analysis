@@ -1,4 +1,7 @@
-CREATE TABLE gold.stations(
+IF OBJECTID('bronze.stations','U') IS NOT NULL
+  DROP TABLE bronze.stations
+
+CREATE TABLE bronze.stations(
 id INT,
 station_code VARCHAR(10),
 city VARCHAR(50),
