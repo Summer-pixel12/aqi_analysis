@@ -49,3 +49,9 @@ topo_complexity FLOAT,
 coastal_proximity FLOAT,
 valley_factor FLOAT
 )
+
+CREATE NONCLUSTERED INDEX IX_BronzeData_Date 
+ON bronze.data (timestamp) 
+INCLUDE (station_code);
+
+
