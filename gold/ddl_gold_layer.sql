@@ -46,3 +46,18 @@ wind_direction_max FLOAT,
 barometric_pressure_avg FLOAT,
 barometric_pressure_max FLOAT
 )
+
+
+CREATE TABLE gold.stations(
+station_code VARCHAR(10),
+city VARCHAR(50),
+state_code VARCHAR(3),
+state VARCHAR(50),
+pin_code INT,
+latitude FLOAT,
+longitude FLOAT,
+elevation_m FLOAT,
+topo_complexity FLOAT,
+coastal_proximity FLOAT,
+valley_factor FLOAT
+)
