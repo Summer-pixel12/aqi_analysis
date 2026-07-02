@@ -1,0 +1,2 @@
+CREATE CLUSTERED COLUMNSTORE INDEX CCI_silver_data 
+ON silver.data;
