@@ -49,6 +49,7 @@ BEGIN
         org.bp_avg AS barometric_pressure_avg,
         org.bp_max AS barometric_pressure_max
     FROM silver.data org
+
     CROSS APPLY (
         SELECT MAX(v) FROM (VALUES         
             -- PM2.5 AQI Calculation
@@ -115,10 +116,13 @@ BEGIN
                 WHEN org.nh3_avg > 1800                          THEN 1.0 * (500-401) / (2400-1800) * (org.nh3_avg-1800) + 401
              END)
         ) AS dt(v)
-    ) mx(max_raw_index);
+    ) mx(max_raw_index)
+     WHERE org.station_code NOT LIKE 'UN%';
 
     SET @end_time=GETDATE();
 
 	PRINT 'Time Taken: ' + CAST( DATEDIFF(second,@start_time,@end_time) AS NVARCHAR );
 
 END;
+
+
