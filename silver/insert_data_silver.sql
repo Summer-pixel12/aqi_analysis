@@ -3,24 +3,9 @@ BEGIN
 	SET NOCOUNT ON;
 	DECLARE @start_time DATETIME;
 	DECLARE @end_time DATETIME;
-	DECLARE @current_date DATE;
-	DECLARE @max_date DATE;
 	SET @start_time=GETDATE();
-
-	SELECT
-		@current_date=CAST(MIN(timestamp) AS DATE ),
-		@max_date=CAST(MAX(timestamp) AS DATE )
-		FROM bronze.data;
-
 	
 		TRUNCATE TABLE silver.data;
-
-	WHILE @current_date <= @max_date
-    BEGIN
-		PRINT '===============================================================';
-        PRINT 'Processing data for date: ' + CAST(@current_date AS VARCHAR(10));
-		PRINT '===============================================================';
-
 
 			WITH correct_datatype_data_bronze_data AS (
 			SELECT 
@@ -107,7 +92,6 @@ BEGIN
 					ELSE CAST(xylene AS FLOAT)
 					END AS xylene
 			FROM bronze.data
-			WHERE CAST(timestamp AS DATE) BETWEEN DATEADD(day, -2, @current_date) AND @current_date
 			),
 			rolling_avg AS(
 			SELECT 
@@ -190,12 +174,7 @@ BEGIN
 		AVG(xylene),
 		MAX(xylene)
 		FROM rolling_avg
-		WHERE CAST(date AS DATE) = @current_date
 		GROUP BY station_code,CAST(date AS DATE)
-
-		SET @current_date = DATEADD(day, 1, @current_date);
-	END
-
 
 	SET @end_time=GETDATE();
 
