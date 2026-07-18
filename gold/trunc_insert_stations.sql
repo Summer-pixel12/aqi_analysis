@@ -1,3 +1,9 @@
+--This procedure is used to insert the data from silver.stations into gold.stations 
+--To execute this procedure use the below query
+--EXEC truncate_and_insert_into_gold_layer_stations
+
+--Additionally the state was determined from the state_code in this step
+
 CREATE PROCEDURE truncate_and_insert_into_gold_layer_stations AS
 BEGIN
 	DECLARE @start_time DATETIME;
