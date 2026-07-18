@@ -1,3 +1,7 @@
+--This is the SQL for data definition for the bronze layer 
+--These are to be executed first in order to create the necessary tables in ms sql server 
+
+
 --creating the database inside ms sql server
 CREATE DATABASE aqi_report;
 
