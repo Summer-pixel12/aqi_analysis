@@ -1,13 +1,19 @@
+--creating the database inside ms sql server
 CREATE DATABASE aqi_report;
+
+--use the created DB 
 USE aqi_report;
 
+--Creating the necessary schemas
 CREATE SCHEMA bronze;
 CREATE SCHEMA silver;
 CREATE SCHEMA gold;
 
+--dropping the table with the same name if it exists
 IF OBJECTID('bronze.data','U') IS NOT NULL
   DROP TABLE bronze.data;
 
+--The main recording table is created here where the data will be extracteed
 CREATE TABLE bronze.data(
 station_code NVARCHAR(50),
 pm25 NVARCHAR(50),
@@ -33,9 +39,11 @@ mp_xylene NVARCHAR(50),
 xylene NVARCHAR(50)
 )
 
+--dropping the table with the same name if it exists
 IF OBJECTID('bronze.stations','U') IS NOT NULL
   DROP TABLE bronze.stations;
 
+--creating the table for the information of the stations
 CREATE TABLE bronze.stations(
 id INT,
 station_code VARCHAR(10),
@@ -49,9 +57,10 @@ topo_complexity FLOAT,
 coastal_proximity FLOAT,
 valley_factor FLOAT
 )
-
+  
+--creating the nonclustered index on the table data on the column timestamp with including the station_code
+--Note : This is to be executed only when the data has been extracted into the data table so that
+--       the process is fast and efficient. Indexing the table before the extraction may lead to slower and inefficient insertions
 CREATE NONCLUSTERED INDEX IX_BronzeData_Date 
 ON bronze.data (timestamp) 
 INCLUDE (station_code);
-
-
