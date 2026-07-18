@@ -1,3 +1,15 @@
+--This is the stored procedure used to transform the data in the table 
+--bronze.data and insert it into silver.data
+
+--To execute this function run the below query 
+--EXEC truncate_and_insert_into_silver_layer
+
+--The transformations done in this step are listed below
+--1.Casted the columns into their correct data types from Varchar
+--2.Calculated rolling averages for ozone(8 hours) and co(1 hour) gases
+--3.Calculated the daily averages for other pollutants 
+--4.calculated the daily maximum concentration of the pollutants 
+
 CREATE OR ALTER PROCEDURE truncate_and_insert_into_silver_layer AS
 BEGIN
 	SET NOCOUNT ON;
