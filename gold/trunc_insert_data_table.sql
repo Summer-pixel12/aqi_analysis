@@ -1,3 +1,11 @@
+-- This stored procedure is used to insert the data from silver.data into gold.data 
+-- To execute this procedure use the below query
+-- EXEC truncate_and_insert_into_gold_layer_data
+
+--Below are the calculations and transformations done for the gold layer
+--1.In this step the daily aqi for each station is calculated 
+--2.If the AQI is crossing the maximum 500 mark then the AQI is capped to 500
+--3.The names of the columns have been updated to meaningful and understandable names
 
 CREATE OR ALTER PROCEDURE truncate_and_insert_into_gold_layer_data AS
 BEGIN
