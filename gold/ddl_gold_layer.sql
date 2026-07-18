@@ -1,3 +1,5 @@
+--Creating the table gold.data for the gold layer
+
 IF OBJECT_ID('gold.data','U') IS NOT NULL
   DROP TABLE gold.data
 
@@ -47,7 +49,8 @@ barometric_pressure_avg FLOAT,
 barometric_pressure_max FLOAT
 )
 
-
+--Creating the table gold.stations for the gold layer
+  
 CREATE TABLE gold.stations(
 station_code VARCHAR(10),
 city VARCHAR(50),
