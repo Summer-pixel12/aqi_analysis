@@ -1,3 +1,4 @@
+--This the query to create the table silver.data 
 CREATE TABLE silver.data(
 station_code VARCHAR(10),
 date DATE,
@@ -43,6 +44,7 @@ xylene_avg FLOAT,
 xylene_max FLOAT
 );
 
+--This the query to create the table silver.stations
 CREATE TABLE silver.stations(
 	id INT,
 	station_code NVARCHAR(50),
