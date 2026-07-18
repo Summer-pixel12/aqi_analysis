@@ -61,10 +61,3 @@ topo_complexity FLOAT,
 coastal_proximity FLOAT,
 valley_factor FLOAT
 )
-  
---creating the nonclustered index on the table data on the column timestamp with including the station_code
---Note : This is to be executed only when the data has been extracted into the data table so that
---       the process is fast and efficient. Indexing the table before the extraction may lead to slower and inefficient insertions
-CREATE NONCLUSTERED INDEX IX_BronzeData_Date 
-ON bronze.data (timestamp) 
-INCLUDE (station_code);
