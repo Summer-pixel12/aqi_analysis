@@ -127,6 +127,8 @@ AQI tested against key meteorological variables (wind speed, humidity, barometri
 │   ├── silver/                  # Type casting, rolling/daily aggregates
 │   └── gold/                    # Daily AQI calculation, AQI capping, renaming
 └── powerbi/                     # .pbix dashboard file
+    ├──backgrounds/              # Background png files used in powerbi dashboard
+    └──pbix                      # The text file containing the url to download pbix file for the project
 └── AQI Analysis Report
 ```
 
