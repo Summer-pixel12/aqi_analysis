@@ -202,37 +202,23 @@ AQI tested against key meteorological variables (wind speed, humidity, barometri
 
 ```
 ├── README.md
-├── assets/                      # Dashboard screenshots used in this README
+├── Dashboard-Screenshots/                      # Dashboard screenshots used in this README
 │   ├── dashboard-1-forecast.png
 │   ├── dashboard-2-seasonal-trends.png
 │   └── dashboard-3-meteorological-correlation.png
-├── etl/                         # Python ingestion scripts (pyodbc bulk load)
-├── sql/
-│   ├── bronze/                  # Raw ingestion DDL + columnstore index
+├── ETL Pipeline scripts/
+│   ├── bronze/                  # Raw ingestion DDL + columnstore index + python script
 │   ├── silver/                  # Type casting, rolling/daily aggregates
 │   └── gold/                    # Daily AQI calculation, AQI capping, renaming
 └── powerbi/                     # .pbix dashboard file
+└── AQI Analysis Report
 ```
-> Adjust folder names above to match your actual repo layout.
-
 ## Getting Started
 
 **Prerequisites**
 - MS SQL Server (2019+ recommended for columnstore support)
 - Python 3.9+ with `pyodbc`, `pandas`
 - Power BI Desktop (to open the `.pbix` dashboard)
-
-**Setup**
-```bash
-git clone https://github.com/Summer-pixel12/<repo-name>.git
-cd <repo-name>
-pip install -r requirements.txt
-```
-
-1. Update the connection string in `etl/` with your SQL Server instance details.
-2. Run the ingestion script to populate the Bronze layer.
-3. Run the SQL scripts in `sql/silver/` and `sql/gold/` in order to build out the warehouse.
-4. Open `powerbi/dashboard.pbix` and point it at your Gold layer to refresh the dashboard.
 
 ## Future Scope
 
