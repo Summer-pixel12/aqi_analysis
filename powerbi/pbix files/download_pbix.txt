@@ -1,2 +1,5 @@
 Go to the below url to download the pbix file
 https://drive.google.com/file/d/1xuvOLi8Qb4tbGuaP5QBLFEaXgayMJnzu/view?usp=drive_link
+
+NOTE : Make sure to download the background png files and set the canvas background as the images corresponding 
+       to the pages for a clean and modern look.
