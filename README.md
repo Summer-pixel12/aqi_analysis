@@ -178,17 +178,17 @@ A 3-page interactive dashboard built on the Gold layer, covering three distinct 
 ### Page 1 — Station Snapshot & 7-Day AQI Forecast
 Station-level operational view: current AQI status with severity classification, live pollutant breakdown (PM10, PM2.5, CO, Ozone, NO2, SO2, NH3), meteorological context, and a 7-day forward AQI/temperature outlook — filterable by station and date.
 
-![Station snapshot and 7-day forecast](Dashboard Screenshots/dashboard-1-forecast.png)
+![Station snapshot and 7-day forecast](Dashboard-Screenshots/dashboard-1-forecast.png)
 
 ### Page 2 — Seasonal & Weekly Trend Analysis
 AQI aggregated by month and day of week, alongside top 5 best/worst-performing stations for the selected year.
 
-![Seasonal and weekly trend analysis](Dashboard Screenshots/dashboard-2-seasonal-trends.png)
+![Seasonal and weekly trend analysis](Dashboard-Screenshots/dashboard-2-seasonal-trends.png)
 
 ### Page 3 — Meteorological Correlation Analysis
 AQI tested against key meteorological variables (wind speed, humidity, barometric pressure, vertical wind shear) with trend lines, plus a multi-year AQI trend and historical station rankings.
 
-![Meteorological correlation analysis](Dashboard Screenshots/dashboard-3-meteorological-correlation.png)
+![Meteorological correlation analysis](Dashboard-Screenshots/dashboard-3-meteorological-correlation.png)
 
 ## Key Insights
 
