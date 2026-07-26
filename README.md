@@ -213,12 +213,6 @@ AQI tested against key meteorological variables (wind speed, humidity, barometri
 └── powerbi/                     # .pbix dashboard file
 └── AQI Analysis Report
 ```
-## Getting Started
-
-**Prerequisites**
-- MS SQL Server (2019+ recommended for columnstore support)
-- Python 3.9+ with `pyodbc`, `pandas`
-- Power BI Desktop (to open the `.pbix` dashboard)
 
 ## Future Scope
 
